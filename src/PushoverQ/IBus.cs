@@ -21,15 +21,15 @@ namespace PushoverQ
         Task Publish(object message, Action<ISendConfigurator> configure, CancellationToken token);
         Task Publish(object message, Action<ISendConfigurator> configure, TimeSpan timeout, CancellationToken token);
 
-        Task<T> Publish<T>(object message);
-        Task<T> Publish<T>(object message, TimeSpan timeout);
-        Task<T> Publish<T>(object message, CancellationToken token);
-        Task<T> Publish<T>(object message, TimeSpan timeout, CancellationToken token);
+        Task<T> Publish<T>(T message);
+        Task<T> Publish<T>(T message, TimeSpan timeout);
+        Task<T> Publish<T>(T message, CancellationToken token);
+        Task<T> Publish<T>(T message, TimeSpan timeout, CancellationToken token);
 
-        Task<T> Publish<T>(object message, Action<ISendConfigurator> configure);
-        Task<T> Publish<T>(object message, Action<ISendConfigurator> configure, TimeSpan timeout);
-        Task<T> Publish<T>(object message, Action<ISendConfigurator> configure, CancellationToken token);
-        Task<T> Publish<T>(object message, Action<ISendConfigurator> configure, TimeSpan timeout, CancellationToken token);
+        Task<T> Publish<T>(T message, Action<ISendConfigurator> configure);
+        Task<T> Publish<T>(T message, Action<ISendConfigurator> configure, TimeSpan timeout);
+        Task<T> Publish<T>(T message, Action<ISendConfigurator> configure, CancellationToken token);
+        Task<T> Publish<T>(T message, Action<ISendConfigurator> configure, TimeSpan timeout, CancellationToken token);
 
         void Attach<T>(Func<T, Task> handler) where T : class;
         void Attach<T>(Func<T, Envelope, Task> handler) where T : class;

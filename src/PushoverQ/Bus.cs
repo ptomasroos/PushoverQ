@@ -147,43 +147,43 @@ namespace PushoverQ
         }
 
         #region Publish<T> wrapper overloads
-        public Task<T> Publish<T>(object message)
+        public Task<T> Publish<T>(T message)
         {
             return Publish<T>(message, Timeout.InfiniteTimeSpan, CancellationToken.None);
         }
 
-        public Task<T> Publish<T>(object message, TimeSpan timeout)
+        public Task<T> Publish<T>(T message, TimeSpan timeout)
         {
             return Publish<T>(message, timeout, CancellationToken.None);
         }
 
-        public Task<T> Publish<T>(object message, CancellationToken token)
+        public Task<T> Publish<T>(T message, CancellationToken token)
         {
             return Publish<T>(message, Timeout.InfiniteTimeSpan, token);
         }
         #endregion
 
-        public Task<T> Publish<T>(object message, TimeSpan timeout, CancellationToken token)
+        public Task<T> Publish<T>(T message, TimeSpan timeout, CancellationToken token)
         {
             return Publish<T>(message, null, timeout, token);
         }
 
-        public Task<T> Publish<T>(object message, Action<ISendConfigurator> configure)
+        public Task<T> Publish<T>(T message, Action<ISendConfigurator> configure)
         {
             return Publish<T>(message, configure, Timeout.InfiniteTimeSpan, CancellationToken.None);
         }
 
-        public Task<T> Publish<T>(object message, Action<ISendConfigurator> configure, TimeSpan timeout)
+        public Task<T> Publish<T>(T message, Action<ISendConfigurator> configure, TimeSpan timeout)
         {
             return Publish<T>(message, configure, timeout, CancellationToken.None);
         }
 
-        public Task<T> Publish<T>(object message, Action<ISendConfigurator> configure, CancellationToken token)
+        public Task<T> Publish<T>(T message, Action<ISendConfigurator> configure, CancellationToken token)
         {
             return Publish<T>(message, configure, Timeout.InfiniteTimeSpan, token);
         }
 
-        public Task<T> Publish<T>(object message, Action<ISendConfigurator> configure, TimeSpan timeout, CancellationToken token)
+        public Task<T> Publish<T>(T message, Action<ISendConfigurator> configure, TimeSpan timeout, CancellationToken token)
         {
             throw new NotImplementedException();
         }
